@@ -42,3 +42,7 @@
 
 > Do task 4 from tasks.md only. Install vitest and @vitest/ui, add "test": "vitest run" and "test:ui": "vitest --ui" scripts. Write at least 4 meaningful tests for our data processing functions (like getting the id from a URL and building the image URL), including edge cases. Make sure npm run build still passes. When you're done, explain in simple words what each test checks.
 **My note:** Task 4 done. Checked: npm test shows 13 passing tests, npm run test:ui opens the browser with all tests green (needed the URL with the token from the terminal), build passes.
+**18:22 · claude**
+
+> Do task 5 from tasks.md only. Put the filter logic in a separate function in src/utils so it can be tested, and make the search box its own component that gets the value and onChange as props. Add tests for the filter function. Make sure npm test and npm run build pass. When you're done, explain in simple words where the search state lives and why it's there.
+**My note:** Task 5 done. Checked: "char" and "CHAR" show only the char Pokemon, clearing shows all 60, "xyz" shows "No Pokemon found". npm test: 21 passed.
