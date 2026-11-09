@@ -46,3 +46,7 @@
 
 > Do task 5 from tasks.md only. Put the filter logic in a separate function in src/utils so it can be tested, and make the search box its own component that gets the value and onChange as props. Add tests for the filter function. Make sure npm test and npm run build pass. When you're done, explain in simple words where the search state lives and why it's there.
 **My note:** Task 5 done. Checked: "char" and "CHAR" show only the char Pokemon, clearing shows all 60, "xyz" shows "No Pokemon found". npm test: 21 passed.
+**18:26 · claude**
+
+> Do task 6 from tasks.md only. Put the localStorage read/write and the add/remove favorite logic in separate functions in src/utils, and add tests for the add/remove logic. Handle the case where localStorage has invalid data. Make the favorite button its own component. Make sure npm test and npm run build pass. When you're done, explain in simple words how a favorite gets saved and how the favorites page reads it after a refresh.
+**My note:** Task 6 done. Checked: empty message on /favorites, added a Pokemon, it stayed after refresh, removing works. Saw the data in DevTools > Application > Local Storage. npm test: 40 passed.

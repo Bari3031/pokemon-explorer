@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { fetchPokemonDetails } from '../api/pokemonApi'
-import type { PokemonDetails } from '../types/pokemon'
+import FavoriteButton from '../components/FavoriteButton'
+import type { Pokemon, PokemonDetails } from '../types/pokemon'
+import { addFavorite, isFavorite, removeFavorite } from '../utils/favorites'
+import { loadFavorites, saveFavorites } from '../utils/favoritesStorage'
 
 // The answer we got from the API, and which id it belongs to.
 type LoadResult = {
@@ -13,6 +16,8 @@ type LoadResult = {
 function DetailsPage() {
   const { id = '' } = useParams()
   const [result, setResult] = useState<LoadResult | null>(null)
+  // Read the saved favorites once, when the page opens.
+  const [favorites, setFavorites] = useState<Pokemon[]>(loadFavorites)
 
   useEffect(() => {
     // If the page closes or the id changes before the data arrives, ignore the late answer.
@@ -69,10 +74,23 @@ function DetailsPage() {
     )
   }
 
+  const pokemonIsFavorite = isFavorite(favorites, pokemon.id)
+
+  const handleToggleFavorite = () => {
+    const nextFavorites = pokemonIsFavorite
+      ? removeFavorite(favorites, pokemon.id)
+      : addFavorite(favorites, pokemon)
+    setFavorites(nextFavorites)
+    saveFavorites(nextFavorites)
+  }
+
   return (
     <main>
       <h1>{pokemon.name}</h1>
       <img src={pokemon.image} alt={pokemon.name} width={192} height={192} />
+      <p>
+        <FavoriteButton isFavorite={pokemonIsFavorite} onToggle={handleToggleFavorite} />
+      </p>
 
       <h2>Types</h2>
       <p>{pokemon.types.join(', ')}</p>
