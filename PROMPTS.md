@@ -50,3 +50,7 @@
 
 > Do task 6 from tasks.md only. Put the localStorage read/write and the add/remove favorite logic in separate functions in src/utils, and add tests for the add/remove logic. Handle the case where localStorage has invalid data. Make the favorite button its own component. Make sure npm test and npm run build pass. When you're done, explain in simple words how a favorite gets saved and how the favorites page reads it after a refresh.
 **My note:** Task 6 done. Checked: empty message on /favorites, added a Pokemon, it stayed after refresh, removing works. Saw the data in DevTools > Application > Local Storage. npm test: 40 passed.
+**18:41 · claude**
+
+> Do task 7 from tasks.md only. Reuse the existing fetch functions and types. Put the logic that combines two Pokemon's stats into table rows in a separate function in src/utils, and add tests for it. Make the stats table its own component that gets the two Pokemon as props. Make sure npm test and npm run build pass. When you're done, explain in simple words what happens when I choose two Pokemon.
+**My note:** Task 7 done. Checked: prompt shows before choosing, after choosing two Pokemon a stats table appears, changing one updates the table. npm test: 47 passed.
