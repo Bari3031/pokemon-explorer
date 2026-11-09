@@ -10,8 +10,10 @@ function FavoritesPage() {
     return (
       <main>
         <h1>Favorites</h1>
-        <p>You have no favorites yet. Open a Pokemon and click "Add to favorites".</p>
-        <Link to="/">Go to the list</Link>
+        <div className="message">
+          <p>You have no favorites yet. Open a Pokemon and click "Add to favorites".</p>
+          <Link to="/">Go to the list</Link>
+        </div>
       </main>
     )
   }
@@ -19,7 +21,7 @@ function FavoritesPage() {
   return (
     <main>
       <h1>Favorites</h1>
-      <ul>
+      <ul className="pokemon-grid">
         {favorites.map((pokemon) => (
           <li key={pokemon.id}>
             <PokemonCard pokemon={pokemon} />

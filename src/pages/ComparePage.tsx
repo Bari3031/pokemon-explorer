@@ -3,6 +3,7 @@ import { fetchPokemonDetails, fetchPokemonList } from '../api/pokemonApi'
 import PokemonSelect from '../components/PokemonSelect'
 import StatsTable from '../components/StatsTable'
 import type { Pokemon, PokemonDetails } from '../types/pokemon'
+import './ComparePage.css'
 
 // The answer for one pair of choices, and which pair it belongs to.
 type CompareResult = {
@@ -84,7 +85,7 @@ function ComparePage() {
     return (
       <main>
         <h1>Compare</h1>
-        <p>Loading...</p>
+        <p className="message" role="status">Loading...</p>
       </main>
     )
   }
@@ -93,7 +94,7 @@ function ComparePage() {
     return (
       <main>
         <h1>Compare</h1>
-        <p role="alert">{listError}</p>
+        <p className="message message-error" role="alert">{listError}</p>
       </main>
     )
   }
@@ -104,22 +105,32 @@ function ComparePage() {
   return (
     <main>
       <h1>Compare</h1>
-      <PokemonSelect
-        label="First Pokemon"
-        pokemonList={pokemonList}
-        value={firstId}
-        onChange={setFirstId}
-      />{' '}
-      <PokemonSelect
-        label="Second Pokemon"
-        pokemonList={pokemonList}
-        value={secondId}
-        onChange={setSecondId}
-      />
+      <div className="compare-controls">
+        <PokemonSelect
+          label="First Pokemon"
+          pokemonList={pokemonList}
+          value={firstId}
+          onChange={setFirstId}
+        />
+        <PokemonSelect
+          label="Second Pokemon"
+          pokemonList={pokemonList}
+          value={secondId}
+          onChange={setSecondId}
+        />
+      </div>
 
-      {!bothChosen && <p>Choose two Pokemon to compare their stats.</p>}
-      {bothChosen && current === null && <p>Loading...</p>}
-      {current?.error && <p role="alert">{current.error}</p>}
+      {!bothChosen && <p className="message">Choose two Pokemon to compare their stats.</p>}
+      {bothChosen && current === null && (
+        <p className="message" role="status">
+          Loading...
+        </p>
+      )}
+      {current?.error && (
+        <p className="message message-error" role="alert">
+          {current.error}
+        </p>
+      )}
       {current?.first && current.second && (
         <StatsTable first={current.first} second={current.second} />
       )}

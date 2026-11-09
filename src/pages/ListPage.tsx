@@ -34,7 +34,7 @@ function ListPage() {
   if (isLoading) {
     return (
       <main>
-        <p>Loading...</p>
+        <p className="message" role="status">Loading...</p>
       </main>
     )
   }
@@ -42,7 +42,7 @@ function ListPage() {
   if (error) {
     return (
       <main>
-        <p role="alert">{error}</p>
+        <p className="message message-error" role="alert">{error}</p>
       </main>
     )
   }
@@ -56,9 +56,9 @@ function ListPage() {
       <SearchBox value={search} onChange={setSearch} />
 
       {visiblePokemon.length === 0 ? (
-        <p>No Pokemon found</p>
+        <p className="message">No Pokemon found</p>
       ) : (
-        <ul>
+        <ul className="pokemon-grid">
           {visiblePokemon.map((pokemon) => (
             <li key={pokemon.id}>
               <PokemonCard pokemon={pokemon} />

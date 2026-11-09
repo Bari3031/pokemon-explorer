@@ -10,7 +10,7 @@ function StatsTable({ first, second }: StatsTableProps) {
   const rows = buildStatRows(first, second)
 
   return (
-    <table>
+    <table className="data-table">
       <thead>
         <tr>
           <th scope="col">Stat</th>

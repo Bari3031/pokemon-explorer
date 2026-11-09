@@ -5,8 +5,8 @@ type SearchBoxProps = {
 
 function SearchBox({ value, onChange }: SearchBoxProps) {
   return (
-    <label>
-      Search by name{' '}
+    <label className="field search-box">
+      Search by name
       <input
         type="search"
         value={value}

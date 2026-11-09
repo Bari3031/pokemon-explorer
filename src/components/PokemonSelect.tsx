@@ -11,8 +11,8 @@ type PokemonSelectProps = {
 // or '' when nothing is chosen yet.
 function PokemonSelect({ label, pokemonList, value, onChange }: PokemonSelectProps) {
   return (
-    <label>
-      {label}{' '}
+    <label className="field">
+      {label}
       <select value={value} onChange={(event) => onChange(event.target.value)}>
         <option value="">Choose a Pokemon</option>
         {pokemonList.map((pokemon) => (

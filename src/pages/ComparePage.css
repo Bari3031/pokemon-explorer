@@ -1,0 +1,8 @@
+/* The compare page: the two dropdowns sit side by side, or stacked on narrow screens. */
+
+.compare-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px 16px;
+  margin-bottom: 20px;
+}

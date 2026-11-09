@@ -54,3 +54,24 @@
 
 > Do task 7 from tasks.md only. Reuse the existing fetch functions and types. Put the logic that combines two Pokemon's stats into table rows in a separate function in src/utils, and add tests for it. Make the stats table its own component that gets the two Pokemon as props. Make sure npm test and npm run build pass. When you're done, explain in simple words what happens when I choose two Pokemon.
 **My note:** Task 7 done. Checked: prompt shows before choosing, after choosing two Pokemon a stats table appears, changing one updates the table. npm test: 47 passed.
+
+**18:47 · claude**
+
+> Do task 8 from tasks.md only. Write our own plain CSS, no UI libraries. First remove the leftover Vite template styles and assets we don't use (like the default App.css styles and the border on the side of the page). Style the nav bar, a responsive grid of cards on the list, a clear details page, the compare table, and the loading, error and empty messages. Use CSS variables for colors. Make every page fit a 375px wide screen with no sideways scrolling. Make sure npm test and npm run build pass. When you're done, tell me which CSS files exist and what each one styles.
+**My note:** Task 8 done. Checked: all pages styled consistently, side border removed, checked every page at 375px in DevTools device mode with no sideways scrolling. Build and tests pass.
+
+**18:53 · claude**
+
+> <task-notification>
+> <task-id>b6yfw7ofs</task-id>
+> <tool-use-id>toolu_01FFhB2shmDujRF7ipLwn28x</tool-use-id>
+> <output-file>C:\Users\BYITZH~1\AppData\Local\Temp\claude\963ca5c2b9539694\584f68e6-8c08-4313-954d-4db9565b3116\tasks\b6yfw7ofs.output</output-file>
+> <status>failed</status>
+> <summary>Background command "Serve the built app locally for screenshots" failed with exit code 127</summary>
+> </task-notification>
+
+
+**18:59 · claude**
+
+> Do task 9 from tasks.md only. Rewrite README.md for this project. Include: what the app does, the pages and their URLs, the API we use (PokeAPI, with the URLs), how to install and run it (npm install, npm run dev, npm run build, npm test, npm run test:ui), a short project structure section (pages, components, utils, tests), and links to PRD.md and tasks.md. Keep it clear and short.
+**My note:** Task 9 done. Checked: README describes the app, the pages, PokeAPI, and how to run the app and the tests.

@@ -1,24 +1,26 @@
 import { NavLink } from 'react-router-dom'
-
-const linkStyle = ({ isActive }: { isActive: boolean }) => ({
-  fontWeight: isActive ? 'bold' : 'normal',
-  textDecoration: isActive ? 'underline' : 'none',
-})
+import './NavBar.css'
 
 function NavBar() {
   return (
-    <nav>
-      <NavLink to="/" end style={linkStyle}>
-        List
-      </NavLink>
-      {' | '}
-      <NavLink to="/favorites" style={linkStyle}>
-        Favorites
-      </NavLink>
-      {' | '}
-      <NavLink to="/compare" style={linkStyle}>
-        Compare
-      </NavLink>
+    <nav className="navbar" aria-label="Main">
+      <ul className="navbar-links">
+        <li>
+          <NavLink to="/" end className="navbar-link">
+            List
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/favorites" className="navbar-link">
+            Favorites
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/compare" className="navbar-link">
+            Compare
+          </NavLink>
+        </li>
+      </ul>
     </nav>
   )
 }

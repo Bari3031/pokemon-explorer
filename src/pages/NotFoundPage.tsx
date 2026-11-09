@@ -4,8 +4,10 @@ function NotFoundPage() {
   return (
     <main>
       <h1>404 · Page not found</h1>
-      <p>This page doesn't exist.</p>
-      <Link to="/">Back to the list</Link>
+      <p className="message">This page doesn't exist.</p>
+      <Link to="/" className="back-link">
+        ← Back to the list
+      </Link>
     </main>
   )
 }

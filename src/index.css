@@ -1,111 +1,250 @@
+/* Global styles: colors, base elements, and pieces shared by several pages. */
+
+/* ---------- Colors and sizes ---------- */
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --color-bg: #f5f6fa;
+  --color-surface: #ffffff;
+  --color-surface-alt: #eef0f5;
+  --color-text: #1d2230;
+  --color-text-muted: #596174;
+  --color-border: #dce0e9;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  --color-accent: #c62f22;
+  --color-accent-hover: #a5261b;
+  --color-on-accent: #ffffff;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
+  --color-nav-bg: #c62f22;
+  --color-nav-text: #ffffff;
+
+  --color-error-bg: #fdecea;
+  --color-error-border: #f2b6ae;
+  --color-error-text: #9b1c12;
+
+  --color-focus: #2a64d6;
+
+  --radius: 12px;
+  --shadow: 0 2px 8px rgba(20, 24, 40, 0.08);
+  --page-max-width: 1100px;
+  --page-padding: 16px;
+
   color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+    --color-bg: #14161c;
+    --color-surface: #1e2129;
+    --color-surface-alt: #2a2e39;
+    --color-text: #eceef3;
+    --color-text-muted: #a5abba;
+    --color-border: #353a47;
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
+    --color-accent: #ff8a7d;
+    --color-accent-hover: #ffa89e;
+    --color-on-accent: #14161c;
+
+    --color-nav-bg: #9e2a20;
+    --color-nav-text: #ffffff;
+
+    --color-error-bg: #3a1d1b;
+    --color-error-border: #6e322c;
+    --color-error-text: #ffb4ab;
+
+    --color-focus: #8fb4ff;
+
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
   }
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+/* ---------- Base elements ---------- */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-bg);
+  overflow-wrap: break-word;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+main {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 24px var(--page-padding) 48px;
 }
 
 h1,
 h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+  line-height: 1.2;
 }
 
 h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
+  margin: 0 0 20px;
+  font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
 }
+
 h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+}
+
+/* ---------- Form fields (search box, dropdowns) ---------- */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  font: inherit;
+  font-weight: 400;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.field select {
+  text-transform: capitalize;
+}
+
+.search-box {
+  max-width: 420px;
+}
+
+/* ---------- Loading, error and empty messages ---------- */
+
+.message {
+  margin: 24px 0;
+  padding: 20px;
+  text-align: center;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+}
+
+.message p {
   margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
 }
-p {
+
+.message-error {
+  color: var(--color-error-text);
+  background: var(--color-error-bg);
+  border: 1px solid var(--color-error-border);
+}
+
+/* ---------- Grid of Pokemon cards (list and favorites pages) ---------- */
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ---------- Small rounded labels (types, abilities) ---------- */
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+.tag {
+  padding: 4px 12px;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+  background: var(--color-surface-alt);
+  border-radius: 999px;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+/* ---------- Stat tables (details and compare pages) ---------- */
+
+.data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.data-table th,
+.data-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.data-table tbody tr:last-child > * {
+  border-bottom: none;
+}
+
+.data-table thead th {
+  background: var(--color-surface-alt);
+}
+
+/* Column titles over number columns (the Pokemon names on the compare page) */
+.data-table thead th:not(:first-child) {
+  text-align: right;
+  text-transform: capitalize;
+}
+
+.data-table tbody th {
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: capitalize;
+}
+
+.data-table td {
+  text-align: right;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Links back to the list ---------- */
+
+.back-link {
+  display: inline-block;
+  margin-top: 24px;
 }

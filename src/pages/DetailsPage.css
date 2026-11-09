@@ -1,0 +1,38 @@
+/* The details page: a header card, then types, abilities and stats. */
+
+.details-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+  padding: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.details-image {
+  width: 160px;
+  height: 160px;
+  image-rendering: pixelated;
+  background: var(--color-surface-alt);
+  border-radius: 50%;
+}
+
+.details-name {
+  margin: 0 0 12px;
+  text-transform: capitalize;
+}
+
+.details-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+/* The stats table takes the full width under types and abilities. */
+.details-stats {
+  grid-column: 1 / -1;
+}

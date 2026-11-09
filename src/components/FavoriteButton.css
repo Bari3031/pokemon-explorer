@@ -1,0 +1,28 @@
+/* The add/remove favorite button on the details page. */
+
+.favorite-button {
+  min-height: 44px;
+  padding: 8px 18px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--color-accent);
+  background: transparent;
+  border: 2px solid var(--color-accent);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.favorite-button:hover {
+  background: var(--color-surface-alt);
+}
+
+/* Filled in when the Pokemon is already a favorite. */
+.favorite-button[aria-pressed='true'] {
+  color: var(--color-on-accent);
+  background: var(--color-accent);
+}
+
+.favorite-button[aria-pressed='true']:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}

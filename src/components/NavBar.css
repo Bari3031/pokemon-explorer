@@ -1,0 +1,44 @@
+/* The bar at the top of every page. */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-nav-bg);
+  box-shadow: var(--shadow);
+}
+
+.navbar-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 8px var(--page-padding);
+  list-style: none;
+}
+
+.navbar-link {
+  display: block;
+  padding: 8px 14px;
+  font-weight: 500;
+  color: var(--color-nav-text);
+  text-decoration: none;
+  border-radius: 999px;
+}
+
+.navbar-link:hover {
+  color: var(--color-nav-text);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* NavLink adds the "active" class to the link of the page you're on. */
+.navbar-link.active {
+  font-weight: 700;
+  color: var(--color-nav-bg);
+  background: var(--color-nav-text);
+}
+
+.navbar-link:focus-visible {
+  outline-color: var(--color-nav-text);
+}
