@@ -29,3 +29,8 @@
 
 > Do task 1 from tasks.md only. Use a separate component file for a Pokemon card. When you're done, tell me which files you created and what each one does, in simple words.
 **My note:** Task 1 done. Checked in the browser: 5 Pokemon with name and image, no errors in the console.
+
+**18:00 · claude**
+
+> Do task 2 from tasks.md only. Use react-router-dom. Put each page in a pages folder and each component in a components folder. When you're done, explain in simple words how routing works in this app: where the routes are defined and how clicking a Pokemon gets to its details page.
+**My note:** Task 2 done. Checked: clicking a Pokemon opens /pokemon/<id>, nav bar highlights the current page, /abc shows 404, no console errors.
