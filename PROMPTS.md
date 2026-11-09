@@ -38,3 +38,7 @@
 
 > Do task 3 from tasks.md only. Put the fetch logic and the data processing (like getting the id from the URL) in separate functions, so we can test them later. Add TypeScript types for the API responses, no "any". When you're done, explain in simple words what happens from the moment the list page opens until the Pokemon appear on screen.
 **My note:** Task 3 done. Checked: 60 Pokemon from PokeAPI, details show types/abilities/stats, loading message appears, error message shows when Offline after the app loaded (refreshing while Offline just shows Chrome's offline page).
+**18:16 · claude**
+
+> Do task 4 from tasks.md only. Install vitest and @vitest/ui, add "test": "vitest run" and "test:ui": "vitest --ui" scripts. Write at least 4 meaningful tests for our data processing functions (like getting the id from a URL and building the image URL), including edge cases. Make sure npm run build still passes. When you're done, explain in simple words what each test checks.
+**My note:** Task 4 done. Checked: npm test shows 13 passing tests, npm run test:ui opens the browser with all tests green (needed the URL with the token from the terminal), build passes.
