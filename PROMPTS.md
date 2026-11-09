@@ -24,3 +24,8 @@
 **17:50 · claude**
 
 > Based on PRD.md, create tasks.md with up to 10 small tasks in build order, each with a "Done when:" line I can check by eye. Follow this order: 1) List page from a local JSON file with a few sample Pokemon and a TypeScript type for a Pokemon, no API yet. 2) React Router: list page, details page at /pokemon/:id using useParams, nav bar with NavLink, and 404 page. 3) Replace the local JSON with fetch in useEffect from PokeAPI, with loading and error states. 4) First Vitest tests on our own logic, plus @vitest/ui and a test:ui script. Then: search, favorites with localStorage, compare page, CSS and narrow screen, README. Don't write any code yet.
+
+**17:53 · claude**
+
+> Do task 1 from tasks.md only. Use a separate component file for a Pokemon card. When you're done, tell me which files you created and what each one does, in simple words.
+**My note:** Task 1 done. Checked in the browser: 5 Pokemon with name and image, no errors in the console.
