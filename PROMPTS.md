@@ -75,3 +75,11 @@
 
 > Do task 9 from tasks.md only. Rewrite README.md for this project. Include: what the app does, the pages and their URLs, the API we use (PokeAPI, with the URLs), how to install and run it (npm install, npm run dev, npm run build, npm test, npm run test:ui), a short project structure section (pages, components, utils, tests), and links to PRD.md and tasks.md. Keep it clear and short.
 **My note:** Task 9 done. Checked: README describes the app, the pages, PokeAPI, and how to run the app and the tests.
+## 2026-11-15
+
+**12:17 · claude**
+
+
+> Check the project against these required items and give me a table with ✅ or ❌ for each, and where in the code it is. Don't change any files yet.
+> 1) npm run build and npm test pass. 2) Types for API data and for every component's props, and no "any" anywhere. 3) At least 4 components besides pages, each in its own file. 4) React Router: list, /pokemon/:id, 2 more pages, nav with NavLink. 5) List built with map and a unique key. 6) Details page reads id with useParams, data passed between components with props. 7) fetch inside useEffect. 8) Loading, error and data states. 9) Search. 10) At least 5 Vitest tests on our own logic, and a test:ui script. 11) Own CSS, works on narrow screens. 12) README with what the app does, how to run it and the tests, and the API. 13) PRD.md, tasks.md, PROMPTS.md exist. 14) No errors or warnings in the browser console.
+**My note:** Final check done. Claude checked all 14 required items against the code, all passed. Build OK, 47 tests pass, no console errors.
